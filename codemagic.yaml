@@ -10,5 +10,9 @@ workflows:
     environment:
       flutter: stable
       xcode: latest
-      cocoapods: 1.15.2
+      cocoapods: 1.9.1
       ruby: 2.7.2
+    scripts:
+      - name: Run Test
+        script:
+          flutter test --flavor flavor1 integration_test/app_test.dart
