@@ -8,11 +8,14 @@ workflows:
         description: Input description
         default: Codemagic
     environment:
-      flutter: stable
+      flutter: 3.24.3
       xcode: latest
       cocoapods: 1.9.1
       ruby: 2.7.2
     scripts:
+      - name: Open IOS Simulator
+        script:
+          flutter emulators --launch ios
       - name: Run Test
         script:
           flutter test --flavor flavor1 integration_test/app_test.dart
