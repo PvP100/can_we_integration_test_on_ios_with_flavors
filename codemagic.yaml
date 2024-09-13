@@ -10,12 +10,21 @@ workflows:
     environment:
       flutter: 3.24.3
       xcode: latest
-      cocoapods: 1.9.1
-      ruby: 2.7.2
+      cocoapods: 1.15.2
+      ruby: 3.0.0
     scripts:
+      - name: clean flutter
+        script:
+          flutter clean
       - name: Open IOS Simulator
         script:
           flutter emulators --launch ios
+      - name: go to ios folder
+        script: 
+          cd ios
+      - name: Pod install
+        script:
+          pod install
       - name: Run Test
         script:
           flutter test --flavor flavor1 integration_test/app_test.dart
