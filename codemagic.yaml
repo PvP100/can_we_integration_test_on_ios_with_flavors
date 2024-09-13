@@ -7,3 +7,8 @@ workflows:
       name:
         description: Input description
         default: Codemagic
+    enviroment:
+      flutter: stable
+      xcode: latest
+      cocoapods: 1.15.2
+      ruby: 3.0.0
